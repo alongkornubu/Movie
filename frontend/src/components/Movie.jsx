@@ -1,27 +1,28 @@
 import React from "react";
 import { Movies } from "../Data/dataMovie";
-import { Category } from "../Data/dataMovie";
 
-const ShowMovies = ({item})=> {
-  return  <div className="cursor-pointer h-[232px] w-[174px] rounded-t-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-  <div className="absolute mt-48">
-    <div className="backdrop bg-black/40 text-[#fff] w-full ">
-      <p className="text-base  p-1 block break-words text-center">
-        {item.title}
-      </p>
+const ShowMovies = ({ item }) => {
+  return (
+
+    
+    <div className="cursor-pointer h-[232px] w-[174px] rounded-t-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+      <div className="absolute mt-48">
+        <div className="backdrop bg-black/40 text-[#fff] w-full ">
+          <p className="text-base  p-1 block break-words text-center">
+            {item.title}
+          </p>
+        </div>
+      </div>
+      <div>
+        <img
+          className="h-[229px] w-[174px] bg-cover rounded"
+          src={item.image}
+          alt=""
+        />
+      </div>
     </div>
-  </div>
-  <div>
-    <img
-      className="h-[229px] w-[174px] bg-cover rounded"
-      src={item.image}
-      alt=""
-    />
-  </div>
-  
-</div>
-}
-
+  );
+};
 
 const Movie = () => {
   return (
@@ -36,22 +37,11 @@ const Movie = () => {
             <div className="">
               <div className="grid grid-cols-4 grid-rows-2 gap-2 p-4 shadow  ">
                 {/* <!-- Movie --> */}
-                { Movies.map((item,index)=> 
-                  <ShowMovies key={index}  item={item}  />                
-                )}
-                  
-                  
-               
+                {Movies.map((item, index) => (
+                  <ShowMovies key={index} item={item} />
+                ))}
               </div>
             </div>
-            {/* <!-- Pagination --> */}
-            {/* <footer className="bg-green-300">
-              <div className="flex ">
-                <p>1</p>
-                <p>1</p>
-                <p>1</p>
-              </div>
-            </footer> */}
           </div>
           {/* <!-- Category --> */}
           <div className="bg-white  mt-1 rounded-lg w-56 ">
@@ -59,13 +49,12 @@ const Movie = () => {
               <p className="text-white p-2 ml-2">ประเภท</p>
             </div>
             <div className="flex flex-row mt-1 p-2 ">
-              <div className="w-full border rounded text-center divide-y-2 divide-solid cursor-pointer">
-                
-                <p>Movie</p>
-                <p>Movie</p>
-                <p>Movie</p>
-                <p>Movie</p>
-                <p>Movie</p>
+              <div className="w-full border-2 rounded text-center divide-y-2 divide-solid cursor-pointer">
+                <p>ครอบครัว</p>
+                <p>จินตนาการ</p>
+                <p>ตลก</p>
+                <p>บู๊</p>
+                <p>ระทึกขวัญ</p>
               </div>
             </div>
           </div>
